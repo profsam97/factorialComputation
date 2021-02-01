@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,57 +11,43 @@
   <link rel="stylesheet" href="css/style.css">
   <title>Bootstrap Theme</title>
 </head>
+
 <body>
  <!--NAV -->
- <div class="container">
-  <div class="alert alert-danger alert-dismissible fade show  d-none" role="alert" id="error">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-    <strong>Please type in a number first</strong> 
-  </div>
-  
-<section class="m-3 bg-light">
-  <div class="container p-2">
-    <div class="col-md-12 p-1 text-center bg-danger text-light">
-      <h5>
-        Factorials calculator
-      </h5> 
-    </div>
-    <p class="p-1 text-center text-black-50">Please type in the value of n below</p>
-    <div class="d-flex mx-auto  col-md-3 col-md-offset-3">
-      <div class="form-group">
-        <input type="number" id="n" name="" required id="" class="form-control" placeholder="" aria-describedby="helpId">
-        <small id="helpId" class="text-muted">Numbers only</small>
+ <div class="container m-5 p-3">
+    <section class="m-3 bg-light">
+      <div class="container p-2">
+        <div class="col-md-12 p-1 text-center bg-danger text-light">
+          <h5>
+            Factorials calculator
+          </h5> 
+        </div>
+        <p class="p-1 text-center text-black-50">Please type in the value of n below</p>
+        <div class="d-flex mx-auto  col-md-3 col-md-offset-3">
+          <div class="form-group">
+            <input type="number" id="n" name="" required id="" class="form-control" placeholder="" aria-describedby="helpId">
+            <small id="helpId" class="text-muted">Numbers only</small>
+          </div>
+        </div>
+       
       </div>
-    </div>
-   
-  </div>
-  <div class="d-flex d-row ">
-    <button class="btn btn-danger text-light mr-auto clear" >
-  <i class="fa fa-trash" aria-hidden="true"></i>    Clear
-    </button>
-    <button class="btn btn-success text-light ml-auto " onclick="calculate()">
-    <i class="fa fa-calculator" aria-hidden="true"></i>  Calculate
-    </button>
-  </div>
-  <div class="shows text-center "></div>
-</section>
-
-  <footer id="main-footer" class="p-4 m-0 bg-dark text-white my-2">
-    <div class="row">
-      <div class="col-md-12 text-center">
-         &copy; 2021
+      <div class="d-flex d-row ">
+        <button class="btn btn-danger text-light mr-auto clear" >
+      <i class="fa fa-trash" aria-hidden="true"></i>    Clear
+        </button>
+        <button class="btn btn-success text-light ml-auto " onclick="calculate()">
+        <i class="fa fa-calculator" aria-hidden="true"></i>  Calculate
+        </button>
       </div>
-    </div>
-  </footer>
-</div>
+      <div class="shows text-center "></div>
+    </section>
 
-      
+
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js" integrity="sha512-wV7Yj1alIZDqZFCUQJy85VN+qvEIly93fIQAN7iqDFCPEucLCeNFz4r35FCo9s6WrpdDQPi80xbljXB8Bjtvcg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.9/vue.js" integrity="sha512-o9SZrtqlGkpa7EF+dDrNjEdRFFYhymlrBzDKpolHNolxsyx0IcXAbEm9i1e8QpoiMgEdKZVtY8XiK1t8i6jVDA==" crossorigin="anonymous"></script>
   <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
  
@@ -70,6 +57,8 @@
     $('.port-item').click(function(){
       $('.collapse').collapse('hide');
     });
+    $(".alert").alert();
+
      // Lightbox Init
      $(document).on('click', '[data-toggle="lightbox"]', function (event) {
       event.preventDefault();
@@ -99,6 +88,7 @@
     $('.clear').click(()=>{
       $('.shows').addClass("d-none");
       $('#n').val("");
+      window.location.reload();
     })
   </script>
 </body>
